@@ -151,8 +151,34 @@ body{font-family:"Noto Sans SC",-apple-system,sans-serif;background:var(--bg);co
 <div class="section-label rv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>收集信息</div>
 <div class="section-title rv rv-d1">告诉我你的情况</div>
 <div class="section-desc rv rv-d2">填完之后，我会根据你的实际情况免费搭一套能落地的 AI 工作流。</div>
-<div style="width:100%;max-width:700px;margin:0 auto" class="rv">
-<iframe src="https://o3l9a5wo.jsjform.com/f/z4JJlS" style="width:100%;min-height:800px;border:none;border-radius:12px" scrolling="no" id="jinjaFrame" onload="resizeFrame()"></iframe>
+<div class="form-wrap rv">
+<form id="contactForm" onsubmit="return submitForm(event)">
+<input type="hidden" name="access_key" value="4b00da38-d268-4964-8c94-0909b37273c7">
+<input type="hidden" name="subject" value="可乐AI工作流 · 新表单提交">
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+<div class="form-row">
+<div class="field"><label>怎么称呼你<span class="opt">*</span></label><input type="text" name="name" id="f_name" required placeholder="你的称呼"></div>
+<div class="field"><label>你在哪个城市</label><input type="text" name="city" id="f_city" placeholder="城市"></div>
+</div>
+<div class="form-row">
+<div class="field"><label>主要用的平台</label><input type="text" name="platform" id="f_platform" placeholder="小红书 / 抖音 / 都做"></div>
+<div class="field"><label>常用工具</label><input type="text" name="tools" id="f_tools" placeholder="相机、手机、剪映…"></div>
+</div>
+<div class="field"><label>你是做什么的</label><div class="chips" data-name="role" data-multi="1"><span class="chip" data-v="摄影师"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>摄影师</span></span><span class="chip" data-v="博主"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>博主</span></span><span class="chip" data-v="模特"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>模特</span></span><span class="chip" data-v="商家"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>商家</span></span><span class="chip" data-v="其他"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>其他</span></span></div></div>
+<div class="field"><label>你的作品风格</label><div class="chips" data-name="style" data-multi="1"><span class="chip" data-v="小清新"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>小清新</span></span><span class="chip" data-v="暗调"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>暗调</span></span><span class="chip" data-v="胶片"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>胶片</span></span><span class="chip" data-v="日系"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>日系</span></span><span class="chip" data-v="复古"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>复古</span></span><span class="chip" data-v="极简"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>极简</span></span></div></div>
+<div class="field"><label>最耗时间的事</label><div class="chips" data-name="timekiller" data-multi="1"><span class="chip" data-v="写文案"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>写文案</span></span><span class="chip" data-v="回私信"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>回私信</span></span><span class="chip" data-v="排版修图"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>排版修图</span></span><span class="chip" data-v="找选题"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>找选题</span></span><span class="chip" data-v="看数据"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>看数据</span></span><span class="chip" data-v="其他"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>其他</span></span></div></div>
+<div class="field"><label>希望多久用上</label><div class="chips" data-name="turnaround"><span class="chip" data-v="这周内"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>这周内</span></span><span class="chip" data-v="这个月"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>这个月</span></span><span class="chip" data-v="越快越好"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>越快越好</span></span><span class="chip" data-v="不着急"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>不着急</span></span></div></div>
+<div class="field"><label>内容更新频率</label><div class="chips" data-name="freq"><span class="chip" data-v="每天"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>每天</span></span><span class="chip" data-v="每周2-3次"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>每周2-3次</span></span><span class="chip" data-v="每周1次"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>每周1次</span></span><span class="chip" data-v="偶尔更"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>偶尔更</span></span></div></div>
+<div class="field"><label>商业合作情况</label><div class="chips" data-name="income"><span class="chip" data-v="还没接过"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>还没接过</span></span><span class="chip" data-v="偶尔有"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>偶尔有</span></span><span class="chip" data-v="比较稳定"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>比较稳定</span></span><span class="chip" data-v="想重点发展"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>想重点发展</span></span></div></div>
+<div class="field"><label>最想解决什么问题</label><textarea name="wish" id="f_wish" placeholder="比如：每次发照片都要花两小时写文案…"></textarea></div>
+<div class="field"><label>其他想补充的</label><textarea name="extra" id="f_extra" placeholder="任何你想让我知道的"></textarea></div>
+<div class="form-row">
+<div class="field"><label>微信号</label><input type="text" name="wechat" id="f_wechat" placeholder="方便我联系你"></div>
+<div class="field"><label>其他联系方式</label><input type="text" name="contact" id="f_contact" placeholder="电话 / 邮箱"></div>
+</div>
+<button type="submit" class="submit-btn" id="submitBtn">提交，等我联系你<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+<div class="form-note">提交后内容会直接发到我的邮箱，我会尽快联系你。放心填，不会群发打扰。</div>
+</form>
 </div>
 </section>
 <footer class="footer"><span>AI 工作流落地 · Ddl</span><span>2026</span></footer>
@@ -173,30 +199,23 @@ document.querySelectorAll(".mag").forEach(b=>{b.addEventListener("mousemove",e=>
 document.querySelectorAll(".card").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform="translateY(-4px) perspective(600px) rotateX("+(-y*6)+"deg) rotateY("+(x*6)+"deg)"});card.addEventListener("mouseleave",()=>{card.style.transform=""})});
 const orb1=document.querySelector(".hero-orb-1"),orb2=document.querySelector(".hero-orb-2");
 window.addEventListener("scroll",()=>{const sy=window.scrollY;if(orb1)orb1.style.transform="translateY("+sy*.15+"px)";if(orb2)orb2.style.transform="translateY("+ -sy*.1+"px)"},{passive:true});
-function submitForm(){return;
-  var fd={
-    name:document.getElementById("f_name").value,
-    city:document.getElementById("f_city").value,
-    platform:document.getElementById("f_platform").value,
-    tools:document.getElementById("f_tools").value,
-    wish:document.getElementById("f_wish").value,
-    extra:document.getElementById("f_extra").value,
-    wechat:document.getElementById("f_wechat").value,
-    contact:document.getElementById("f_contact").value,
-    role:(A.role||[]).join(", "),
-    style:(A.style||[]).join(", "),
-    timekiller:(A.timekiller||[]).join(", "),
-    turnaround:(A.turnaround||[]).join(", "),
-    freq:(A.freq||[]).join(", "),
-    income:(A.income||[]).join(", ")
-  };
-  var btn=document.querySelector(".submit-btn");
+function submitForm(e){
+  e.preventDefault();
+  var btn=document.getElementById("submitBtn");
   btn.textContent="提交中...";
   btn.disabled=true;
-  new Promise(function(resolve){setTimeout(function(){window.open("https://o3l9a5wo.jsjform.com/f/z4JJlS","_blank");resolve({ok:true})},300)})
-  .then(function(r){if(r.ok){var t=document.getElementById("toast");t.textContent="收到！我会尽快联系你";t.classList.add("show");setTimeout(function(){t.classList.remove("show")},3500);btn.textContent="已提交 ✓";btn.style.background="#333"}else{throw new Error("fail")}})
+  var fd=new FormData(document.getElementById("contactForm"));
+  fd.append("role",(A.role||[]).join(", "));
+  fd.append("style",(A.style||[]).join(", "));
+  fd.append("timekiller",(A.timekiller||[]).join(", "));
+  fd.append("turnaround",(A.turnaround||[]).join(", "));
+  fd.append("freq",(A.freq||[]).join(", "));
+  fd.append("income",(A.income||[]).join(", "));
+  fetch("https://api.web3forms.com/submit",{method:"POST",body:fd})
+  .then(function(r){return r.json()})
+  .then(function(r){if(r.success){var t=document.getElementById("toast");t.textContent="收到！我会尽快联系你";t.classList.add("show");setTimeout(function(){t.classList.remove("show")},3500);btn.textContent="已提交 ✓";btn.style.background="#333";btn.disabled=false}else{throw new Error(r.message||"submit failed")}})
   .catch(function(){var t=document.getElementById("toast");t.textContent="提交失败，请稍后再试";t.classList.add("show");setTimeout(function(){t.classList.remove("show")},3500);btn.textContent="提交，等我联系你";btn.disabled=false});
-}
-function resizeFrame(){var f=document.getElementById("jinjaFrame");if(f){f.style.height=f.contentWindow.document.body.scrollHeight+50+"px"}};</script>
+  return false;
+}</script>
 </body>
 </html>
