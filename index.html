@@ -219,7 +219,7 @@ document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
 document.querySelectorAll("a,button,.chip,.card,.stat,.nav-logo").forEach(el=>{el.addEventListener("mouseenter",()=>cur.classList.add("hover"));el.addEventListener("mouseleave",()=>cur.classList.remove("hover"))});
 document.addEventListener("mousedown",()=>cur.classList.add("click"));document.addEventListener("mouseup",()=>cur.classList.remove("click"));
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>60);document.getElementById("progress").style.width=Math.min(100,(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+"%"});
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("v");obs.unobserve(e.target)}})},{threshold:.1,rootMargin:"0px 0px -30px 0px"});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{e.target.classList.toggle("v",e.isIntersecting)})},{threshold:[0,0.1],rootMargin:"0px 0px -30px 0px"});
 document.querySelectorAll(".rv,.rv-left,.rv-right,.sec-line").forEach(el=>obs.observe(el));
 function smoothScroll(s){document.querySelector(s)?.scrollIntoView({behavior:"smooth",block:"start"})}
 const A={};
