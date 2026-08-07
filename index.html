@@ -9,6 +9,7 @@
 :root{--bg:#fff;--text:#000;--text2:#555;--text3:#999;--border:#e5e5e5;--card:#fafafa;--accent:#000;--r:6px;--r2:12px;--mx:1200px}
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{cursor:none}input,textarea{cursor:text}
 .cursor{position:fixed;top:0;left:0;width:20px;height:20px;border:2px solid rgba(0,0,0,.5);border-radius:50%;pointer-events:none;z-index:9999;transition:width .3s,height .3s,border-color .3s,background .3s;transform:translate(-50%,-50%)}
 .cursor-dot{position:fixed;top:0;left:0;width:6px;height:6px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
 .cursor.hover{width:56px;height:56px;border-color:rgba(0,0,0,.12);background:rgba(0,0,0,.02)}
@@ -217,7 +218,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hira
 <script>
 const cur=document.getElementById("cursor"),dot=document.getElementById("cursorDot");let mx=0,my=0,cx=0,cy=0;
 document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
-(function a(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cur.style.left=cx+"px";cur.style.top=cy+"px";dot.style.left=mx+"px";dot.style.top=my+"px";requestAnimationFrame(a)})();
+(function a(){cx+=(mx-cx)*.2;cy+=(my-cy)*.2;cur.style.left=cx+"px";cur.style.top=cy+"px";dot.style.left=mx+"px";dot.style.top=my+"px";requestAnimationFrame(a)})();
 document.querySelectorAll("a,button,.chip,.card,.stat,.nav-logo").forEach(el=>{el.addEventListener("mouseenter",()=>cur.classList.add("hover"));el.addEventListener("mouseleave",()=>cur.classList.remove("hover"))});
 document.addEventListener("mousedown",()=>cur.classList.add("click"));document.addEventListener("mouseup",()=>cur.classList.remove("click"));
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>60);document.getElementById("progress").style.width=Math.min(100,(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+"%"});
