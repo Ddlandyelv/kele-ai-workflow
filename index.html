@@ -219,8 +219,10 @@ document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
 document.querySelectorAll("a,button,.chip,.card,.stat,.nav-logo").forEach(el=>{el.addEventListener("mouseenter",()=>cur.classList.add("hover"));el.addEventListener("mouseleave",()=>cur.classList.remove("hover"))});
 document.addEventListener("mousedown",()=>cur.classList.add("click"));document.addEventListener("mouseup",()=>cur.classList.remove("click"));
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>60);document.getElementById("progress").style.width=Math.min(100,(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+"%"});
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{e.target.classList.toggle("v",e.isIntersecting)})},{threshold:[0,0.1],rootMargin:"0px 0px -30px 0px"});
-document.querySelectorAll(".rv,.rv-left,.rv-right,.sec-line").forEach(el=>obs.observe(el));
+var rvEls=document.querySelectorAll(".rv,.rv-left,.rv-right,.sec-line");
+function rvTick(){var vh=window.innerHeight||document.documentElement.clientHeight;for(var i=0;i<rvEls.length;i++){var el=rvEls[i],r=el.getBoundingClientRect();el.classList.toggle("v",r.top<vh-30&&r.bottom>0)}}
+window.addEventListener("scroll",function(){requestAnimationFrame(rvTick)},{passive:true});
+window.addEventListener("resize",rvTick);rvTick();
 function smoothScroll(s){document.querySelector(s)?.scrollIntoView({behavior:"smooth",block:"start"})}
 const A={};
 document.querySelectorAll(".chips").forEach(g=>{const n=g.dataset.name,m=g.dataset.multi==="1";g.querySelectorAll(".chip").forEach(c=>{c.addEventListener("click",()=>{if(m){c.classList.toggle("selected");A[n]=[...g.querySelectorAll(".selected")].map(x=>x.dataset.v)}else{g.querySelectorAll(".chip").forEach(x=>x.classList.remove("selected"));c.classList.add("selected");A[n]=[c.dataset.v]}})})});
