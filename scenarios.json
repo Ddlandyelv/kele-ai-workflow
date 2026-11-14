@@ -1,0 +1,732 @@
+{
+  "schema_version": "1.0",
+  "source": "衍野多轮需求讨论中完整行业脚本 V1.2；为免再次确认，采用完整候选稿作为 Codex 执行默认稿",
+  "disclaimer": "以下均为虚构宣传示例；不存在真实商家订单/预约/支付/推荐结果",
+  "industry_order": [
+    "housing",
+    "food",
+    "coffee",
+    "auto",
+    "furniture",
+    "fitness",
+    "education",
+    "repair",
+    "business",
+    "travel"
+  ],
+  "default_industry": "housing",
+  "default_housing_branch": "rent",
+  "industry_count": 10,
+  "branch_count": 11,
+  "message_count_per_scenario": 6,
+  "entry_event_step": 4,
+  "entry_requires_user_click": true,
+  "preview_on_enter": true,
+  "desktop_autoplay_in_view": true,
+  "mobile_manual_start": true,
+  "scenarios": [
+    {
+      "id": "rent",
+      "industry": "housing",
+      "selector_label": "租房 / 买房",
+      "kind": "rent",
+      "merchant": "城南优居 · 一居室",
+      "price_label": "¥2,480/月",
+      "attributes": [
+        "约42㎡",
+        "独立卫浴",
+        "可做饭",
+        "交通配套示意",
+        "下个月入住为客户需求，不代表已确认空房"
+      ],
+      "final_action": "预约看房（演示）",
+      "preview_visual": "立即显示写实家具式一居室可旋转3D户型预览",
+      "detail_sections": [
+        "3D户型",
+        "室内实景",
+        "房源信息",
+        "交通与配套",
+        "预约看房模拟"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "我想租一套2500元以内的一居室，最好离地铁近一点。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "您计划什么时候入住？对厨房、卫浴和采光有什么要求？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "下个月入住，要有独立卫浴，能做饭，采光好一点。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "这里有一套可以进一步了解的示例房源，您可以先看看户型、租金和配套。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想看看房间的布局。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入房源小程序，查看3D户型、室内照片和房源详情。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "全部房源虚构，非真实可租房源；不要承诺地铁距离、空房状态。"
+      ]
+    },
+    {
+      "id": "buy",
+      "industry": "housing",
+      "selector_label": "租房 / 买房",
+      "kind": "buy",
+      "merchant": "城南雅居 · 两居室",
+      "price_label": "总价¥145万（示例）",
+      "attributes": [
+        "约82㎡",
+        "两居室",
+        "交通配套信息需真实核验",
+        "不得声称真实在售或产权状态"
+      ],
+      "final_action": "预约看房（演示）",
+      "preview_visual": "立即显示与租房不同的两居室家具式可旋转3D模型",
+      "detail_sections": [
+        "3D户型",
+        "室内实景",
+        "价格与面积",
+        "房源介绍",
+        "预约看房/咨询模拟"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "我想买一套两居室，总价150万以内，最好交通方便一点。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "对面积、楼层和装修情况有什么要求？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "80平方米左右，采光好一点，最好能看看户型。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "这里有一套可以进一步了解的示例房源，您可以查看户型、面积和价格。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "两个卧室分别在哪里？可以看看布局吗？",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入房源小程序，查看3D户型、房屋照片和详细资料。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不得模拟立即买房成功、签约、交定金。"
+      ]
+    },
+    {
+      "id": "food",
+      "industry": "food",
+      "selector_label": "餐饮点餐",
+      "kind": "restaurant",
+      "merchant": "禾里小馆 · 双人套餐",
+      "price_label": "示例价¥138",
+      "attributes": [
+        "两人用餐",
+        "今晚七点为用户意向时间",
+        "清淡、鱼类和蔬菜",
+        "实际套餐内容均为模拟"
+      ],
+      "final_action": "查看菜单 / 模拟下单",
+      "preview_visual": "真实感中餐双人套餐菜品摄影",
+      "detail_sections": [
+        "菜品高清实拍",
+        "套餐组成",
+        "价格与口味条件",
+        "门店信息",
+        "待确认订单模拟"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "附近有没有适合两个人吃的中餐？预算150元左右，口味清淡一点。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "打算什么时候去？有没有特别想吃或者不吃的菜？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "今晚七点左右，想吃鱼和蔬菜。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以了解一家提供双人套餐的示例餐厅，先看看菜单和价格是否合适。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "双人套餐具体有哪些菜？",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入餐厅小程序，查看菜品照片、套餐组成、价格和点餐说明。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不得提供“今晚七点有空位”的未经证实信息。"
+      ]
+    },
+    {
+      "id": "coffee",
+      "industry": "coffee",
+      "selector_label": "咖啡饮品",
+      "kind": "drink",
+      "merchant": "冰拿铁 · 到店自取",
+      "price_label": "以实际门店为准（示例）",
+      "attributes": [
+        "顾客指名瑞幸",
+        "冰拿铁",
+        "少冰",
+        "到店自取",
+        "取餐门店待选择"
+      ],
+      "final_action": "查看待确认订单（演示）",
+      "preview_visual": "真实感无LOGO冰拿铁商品摄影，规格摘要",
+      "detail_sections": [
+        "饮品规格",
+        "冷热/冰量",
+        "取餐门店待选",
+        "订单待确认",
+        "金额待核对"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "帮我点一杯瑞幸咖啡。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "想喝什么饮品？冰的还是热的？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "冰拿铁，少冰，到店自取。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "饮品偏好已经明确。到店自取还需要选择取餐门店，确认饮品规格。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想先看看订单内容。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以查看饮品订单示例页面，核对规格、取餐门店和价格，再决定下一步操作。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "仅为顾客指名真实品牌的演示话术，绝不暗示衍野与瑞幸合作；无官方品牌logo及复制官方页面；不能生成真实订单。"
+      ]
+    },
+    {
+      "id": "auto",
+      "industry": "auto",
+      "selector_label": "汽车服务",
+      "kind": "maintenance",
+      "merchant": "诚远汽车养护 · 常规保养",
+      "price_label": "按实际车型及项目确认",
+      "attributes": [
+        "大众朗逸（客户指定）",
+        "换机油",
+        "车况检查",
+        "详细项目报价为示例"
+      ],
+      "final_action": "预约保养（演示）",
+      "preview_visual": "高级汽车养护实景摄影，服务项目分类",
+      "detail_sections": [
+        "适用车型",
+        "机油/检测项目",
+        "收费明细",
+        "门店与服务条件",
+        "预约说明"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "附近有没有汽车保养店？想找收费透明一点的。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "您开的是什么车型？主要需要做哪些保养项目？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "大众朗逸，想换机油，顺便检查一下车辆。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以先了解一家示例保养门店，查看适用车型、服务项目和收费说明。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "能不能看看保养具体包括什么，分别怎么收费？",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入门店小程序，查看服务明细、适用条件和预约说明。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不得臆造真实空档、报价确认或车辆适配关系。"
+      ]
+    },
+    {
+      "id": "furniture",
+      "industry": "furniture",
+      "selector_label": "家具建材",
+      "kind": "product",
+      "merchant": "浅灰布艺双人沙发",
+      "price_label": "价格以咨询确认为准",
+      "attributes": [
+        "宽度不超过1.8米（顾客需求）",
+        "浅灰色",
+        "布艺",
+        "小户型"
+      ],
+      "final_action": "查看详情 / 询价（演示）",
+      "preview_visual": "高级产品摄影：浅灰布艺双人沙发置于小户型客厅",
+      "detail_sections": [
+        "产品实拍",
+        "宽深高尺寸",
+        "材质面料",
+        "颜色",
+        "价格及物流条件"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "想买一张适合小户型的双人沙发，简单耐看一点。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "客厅大概有多宽？喜欢什么颜色和材质？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "宽度别超过1.8米，浅灰色，布艺的就行。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以看看一款符合这些尺寸和风格条件的示例沙发。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想知道实际尺寸和面料，最好还能看看细节。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入商品小程序，查看尺寸、材质、产品照片和购买咨询信息。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "产品图与规格必须一致，不把顾客“宽度要求”写成未经核实的真实商品参数。"
+      ]
+    },
+    {
+      "id": "fitness",
+      "industry": "fitness",
+      "selector_label": "运动健身",
+      "kind": "course",
+      "merchant": "力行健身空间 · 新手基础训练",
+      "price_label": "费用以课程说明为准",
+      "attributes": [
+        "零基础体能训练",
+        "周六下午为用户偏好",
+        "课程实拍/展示为虚构"
+      ],
+      "final_action": "预约体验（演示）",
+      "preview_visual": "现代干净健身房真实感室内摄影",
+      "detail_sections": [
+        "场馆环境",
+        "课程项目",
+        "适合人群",
+        "时段",
+        "体验预约"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "附近有没有适合新手的健身课程？我想周末去。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "您更想练力量、减脂，还是做基础体能训练？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "主要想改善体能，周六下午比较方便。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以先了解一家提供新手课程的示例健身场馆。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想看看场馆环境，还有课程具体练什么。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入场馆小程序，查看课程介绍、环境照片、时间安排和体验咨询方式。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不编造已认证教练、实有课程余位。"
+      ]
+    },
+    {
+      "id": "education",
+      "industry": "education",
+      "selector_label": "教育培训",
+      "kind": "class",
+      "merchant": "青禾美育 · 少儿绘画课程",
+      "price_label": "费用以课程说明为准",
+      "attributes": [
+        "适合8岁（顾客需求）",
+        "周日上午为用户偏好",
+        "绘画基础课程"
+      ],
+      "final_action": "咨询报名（演示）",
+      "preview_visual": "明亮少儿美术教室无人物照片、绘画器材和作品",
+      "detail_sections": [
+        "课堂环境",
+        "课程大纲",
+        "适用年龄",
+        "课时与时间",
+        "咨询报名"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "想给孩子找一个周末的绘画班，附近有没有合适的？",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "孩子多大？以前有没有接触过绘画？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "8岁，之前学过一点，希望周日上午上课。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以先了解一个面向这个年龄段的示例绘画课程。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想看看上课内容和教学环境。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入机构小程序，查看课程安排、课堂环境和报名咨询信息。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "师资资历和实际课表不得虚构成已核实事实；不采集儿童个人信息。"
+      ]
+    },
+    {
+      "id": "repair",
+      "industry": "repair",
+      "selector_label": "数码维修",
+      "kind": "repair",
+      "merchant": "迅修数码 · 手机屏幕检测维修",
+      "price_label": "维修价格需检测后确认",
+      "attributes": [
+        "iPhone 13（客户指定）",
+        "屏幕能显示但玻璃破裂",
+        "检测后报价"
+      ],
+      "final_action": "预约检测（演示）",
+      "preview_visual": "无品牌手机玻璃维修工具/工作台高清摄影",
+      "detail_sections": [
+        "支持机型",
+        "检查与维修项目",
+        "预计费用说明",
+        "服务流程",
+        "预约检测"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "手机屏幕摔坏了，附近哪里可以修？",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "是什么手机型号？屏幕目前还能正常显示吗？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "iPhone 13，还能显示，但是玻璃裂了。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以先了解一家提供相应机型维修服务的示例门店。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想知道维修大概多少钱，需要多久。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入维修门店小程序，查看维修项目、费用说明和预约检测方式。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不得保证具体维修报价、时间和保修；“iPhone”仅用于用户设备型号描述，不能假冒官方维修授权。"
+      ]
+    },
+    {
+      "id": "business",
+      "industry": "business",
+      "selector_label": "企业服务",
+      "kind": "print",
+      "merchant": "展印工坊 · 展会物料制作",
+      "price_label": "提交需求后询价",
+      "attributes": [
+        "易拉宝",
+        "宣传折页",
+        "桌牌",
+        "客户计划下周参展"
+      ],
+      "final_action": "提交需求（演示）",
+      "preview_visual": "高端真实感展会物料成品拍摄：易拉宝/折页/桌牌",
+      "detail_sections": [
+        "成品案例",
+        "材质工艺",
+        "尺寸数量",
+        "交付说明",
+        "询价表单示意"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "我们下周参加展会，需要制作一批宣传物料。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "主要需要哪些物料？大概多少数量？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "易拉宝、宣传折页和桌牌，想先看看制作效果。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以了解一家提供展会物料制作的示例服务商，查看作品和制作项目。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "能不能看一下成品效果？也想了解制作周期。",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入服务商小程序，查看成品案例、材质工艺和询价说明。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不真实上传文件、不提交订单或保证交期。"
+      ]
+    },
+    {
+      "id": "travel",
+      "industry": "travel",
+      "selector_label": "文旅住宿",
+      "kind": "hotel",
+      "merchant": "山间小筑 · 家庭房",
+      "price_label": "房价须按日期核实",
+      "attributes": [
+        "适合三人入住（客户需求）",
+        "两晚",
+        "靠近景区",
+        "希望早餐"
+      ],
+      "final_action": "查看房型 / 预订咨询（演示）",
+      "preview_visual": "温暖高级家庭房室内摄影、床型可见",
+      "detail_sections": [
+        "房间实景",
+        "床型和可入住人数",
+        "早餐与设施",
+        "位置配套",
+        "预订条件"
+      ],
+      "dialogue": [
+        {
+          "step": 1,
+          "role": "顾客",
+          "text": "周末想带家人住两晚，想找一间适合三个人的房间。",
+          "event": "none"
+        },
+        {
+          "step": 2,
+          "role": "小微",
+          "text": "希望住在哪个区域？对早餐和房间设施有什么要求？",
+          "event": "none"
+        },
+        {
+          "step": 3,
+          "role": "顾客",
+          "text": "最好离景区近一点，有早餐，房间宽敞些。",
+          "event": "none"
+        },
+        {
+          "step": 4,
+          "role": "小微",
+          "text": "可以先了解一间适合家庭入住的示例房型，查看环境和设施。",
+          "event": "show_service_entry"
+        },
+        {
+          "step": 5,
+          "role": "顾客",
+          "text": "我想看看房间实景，有几张床？",
+          "event": "none"
+        },
+        {
+          "step": 6,
+          "role": "小微",
+          "text": "可以进入住宿服务小程序，查看房型照片、床型、设施和预订条件。",
+          "event": "none"
+        }
+      ],
+      "notes": [
+        "不得显示未经核实的实时房态、确认预订或住客身份信息。"
+      ]
+    }
+  ]
+}

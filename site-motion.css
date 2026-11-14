@@ -1,0 +1,52 @@
+main{overflow-x:clip}
+/* 默认全部可读，只有增强层成功初始化后才暂藏待入场节点。 */
+.rv,.rv-left,.rv-right{--reveal-x:0px;--reveal-y:26px}
+.rv-left{--reveal-x:-30px;--reveal-y:0px}
+.rv-right{--reveal-x:30px;--reveal-y:0px}
+.motion-ready .motion-pending{opacity:0;transform:translate(var(--reveal-x),var(--reveal-y));pointer-events:none}
+.motion-ready :is(.rv,.rv-left,.rv-right).v{transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready :is(.rv,.rv-left,.rv-right).v{opacity:1;transform:none}
+.motion-instant{transition:none!important}
+.service-stage{position:relative}.motion-ready .service-stage{border-top-color:transparent}
+.sec-line{position:absolute;left:0;right:0;top:0;height:1px;background:var(--border);transform-origin:left;pointer-events:none}
+.motion-ready .sec-line.rv{opacity:1;transform:scaleX(0);transition:none}
+.motion-ready .sec-line.rv.v{transform:scaleX(1);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.reading-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:45;pointer-events:none}
+.reading-progress>i{display:block;height:100%;background:var(--blue);transform:scaleX(0);transform-origin:left}
+header.nav{transition:background-color .25s ease,box-shadow .25s ease,border-color .25s ease}
+header.nav.scrolled{background:#fffffff5;border-bottom-color:#d4dfe7;box-shadow:0 5px 22px #122a4210}
+#navlinks a{position:relative;transition:color .2s ease}
+#navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+#navlinks a[aria-current=location]{color:var(--navy)}
+#navlinks a[aria-current=location]::after{transform:scaleX(1)}
+button,.button,.contact-link{transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease,color .2s ease}
+button:active:not(:disabled),.button:active{transform:translateY(1px)}
+button:focus-visible,.button:focus-visible,.contact-link:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.shop-mock,.audit-mock,.person,.delivery-product,.comparison>div{transition:box-shadow .25s ease,border-color .25s ease}
+.faq-item button span{display:block;transition:transform .25s ease;color:#bdd8e8}
+.faq-item button[aria-expanded=true] span{transform:rotate(180deg)}
+.faq-item:has(button[aria-expanded=true]){border-bottom-color:#9cb8cc}
+.message-enter{animation:message-enter .34s cubic-bezier(.2,.7,.2,1) both}
+.message-enter .service-entry{animation:message-enter .34s .14s cubic-bezier(.2,.7,.2,1) both}
+@keyframes message-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){
+  .button:hover{box-shadow:0 6px 18px #122a4220;transform:translateY(-2px)}
+  button:hover:not(:disabled){border-color:#7597af}
+  .industry-tabs button:hover:not([aria-selected=true]),.view-tabs button:hover:not([aria-selected=true]){background:#edf4f8}
+  .shop-mock:hover,.audit-mock:hover,.person:hover,.delivery-product:hover,.comparison>div:hover{box-shadow:inset 0 0 0 1px #b9cedd,0 12px 30px #122a4215}
+  .service-entry:hover{box-shadow:0 5px 16px #122a4212;background:#f7fbfe}
+  .contact-link:hover{color:#fff;border-bottom-color:var(--blue);transform:translateX(4px)}
+  .faq-item button:hover{color:#d3edff}
+  #navlinks a:hover{color:var(--navy)}
+}
+@media(max-width:767px){.rv-left{--reveal-x:-16px}.rv-right{--reveal-x:16px}.rv{--reveal-y:18px}#navlinks a::after{bottom:5px}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .motion-ready .motion-pending{opacity:1;transform:none;pointer-events:auto}
+  .motion-ready :is(.rv,.rv-left,.rv-right),.sec-line,button,.button,.contact-link,header.nav{transition:none!important}
+  .message-enter,.message-enter .service-entry{animation:none!important}
+  .button:hover,.contact-link:hover,button:active:not(:disabled){transform:none}
+}
+
+.button:active:not(:disabled){transform:translateY(1px);box-shadow:none}
+@media(prefers-reduced-motion:reduce){.button:active:not(:disabled){transform:none}}
