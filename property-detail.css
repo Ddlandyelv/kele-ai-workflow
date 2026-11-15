@@ -1,0 +1,15 @@
+/* 家具式剖切户型细化，保持真实DOM三维和已有交互。 */
+.furniture-detail{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.room{border:2px solid #e4dac8;background:repeating-linear-gradient(0deg,#0000 0 47px,#ae8a5840 48px,#0000 49px 96px),repeating-linear-gradient(90deg,#cfb28a 0 15px,#dfc6a2 16px,#d2b68e 17px 32px,#b696702b 33px)}
+.room.tile{background:repeating-conic-gradient(#e4e7e1 0 25%,#cdd5cf 0 50%) 0/19px 19px}
+.wall{background:linear-gradient(0deg,#b7a88f 0 4px,#f2ece1 5px 88%,#fffaf1 90%);border-top-width:5px}
+.room-label{color:#463e31;font-size:10px;letter-spacing:.5px}
+.bed>.top{background:repeating-linear-gradient(90deg,#c7d1c6 0 12px,#bbc9bd 13px,#c7d1c6 14px 26px);border:3px solid #e8e6da;border-bottom:9px solid #a8b9b0;border-radius:4px}
+.bed>.front{background:#a28b6b}.pillow>.top{border-radius:6px;box-shadow:inset 0 0 0 2px #e9e1d3}.headboard>.top{border-radius:3px}
+.sofa>.top{background:#9eaf99;border:0}.cushion>.top{border-radius:4px;box-shadow:inset 0 0 0 1px #71866b50}
+.table>.top{background:repeating-linear-gradient(90deg,#b18d63 0 5px,#b8956d 6px,#b18d63 7px 12px);border-radius:5px}
+.vase>.top{border-radius:50%;background:#b3c49f}.vase>.front,.vase>.side{border-radius:3px}
+.stove>.front,.sink>.front{background:repeating-linear-gradient(90deg,#d7d5c8 0 22px,#b4b3a7 23px,#e4e1d5 24px 46px);border-top:3px solid #77786c}
+.bath>.top{border:5px solid #f8f6ec;border-radius:12px;background:linear-gradient(135deg,#adc7c4,#d0dfd7);box-shadow:inset 2px 3px 5px #678d8f50}
+.model-stage{background:radial-gradient(ellipse at 45% 35%,#faf7ee,#deded3)}
+.model{isolation:auto}.furniture>.front,.furniture>.side{border-color:#665d491c}
